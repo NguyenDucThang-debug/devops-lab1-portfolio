@@ -25,17 +25,18 @@
 ---
 
 ### 2. DevOps Workflow của bài Lab
-+-------------------+     +-------------------+     +-------------------+
-|       PLAN        |     |       CODE        |     |       BUILD       |
-|    QUYẾT ĐỊNH     | --> |     VIẾT CODE     | --> |  GIAI ĐOẠN BUILD  |
-| Quyết định làm    |     |  Viết index.html  |     |   GitHub Actions  |
-|     portfolio     |     |                   |     |        chạy       |
-+-------------------+     +-------------------+     +-------------------+
-|
-v
-+-------------------+     +-------------------+     +-------------------+
-|      MONITOR      |     |      DEPLOY       |     |       TEST        |
-| THEO DÕI & BÁO CÁO| <-- | DEPLOY PRODUCTION | <-- | KIỂM THỬ VALIDATE |
-| Actions tab ->    |     |   GitHub Pages    |     |   Validate HTML   |
-|     xem log       |     |      public       |     |       file        |
-+-------------------+     +-------------------+     +-------------------+
+```mermaid
+graph LR
+    PLAN["🧠 PLAN<br><b>QUYẾT ĐỊNH</b><br>Quyết định làm portfolio"] --> CODE["📝 CODE<br><b>VIẾT CODE</b><br>Viết index.html"]
+    CODE --> BUILD["⚙️ BUILD<br><b>GIAI ĐOẠN BUILD</b><br>GitHub Actions chạy"]
+    BUILD --> TEST["📋 TEST<br><b>KIỂM THỬ VÀ VALIDATE</b><br>Validate HTML file"]
+    TEST --> DEPLOY["🚀 DEPLOY<br><b>DEPLOY LÊN PRODUCTION</b><br>GitHub Pages public"]
+    DEPLOY --> MONITOR["🔔 MONITOR<br><b>THEO DÕI VÀ BÁO CÁO</b><br>Actions tab ➔ xem log"]
+
+    style PLAN fill:#e6f7ff,stroke:#1890ff,stroke-width:2px;
+    style CODE fill:#e6f7ff,stroke:#1890ff,stroke-width:2px;
+    style BUILD fill:#e6f7ff,stroke:#1890ff,stroke-width:2px;
+    style TEST fill:#e6f7ff,stroke:#1890ff,stroke-width:2px;
+    style DEPLOY fill:#e6f7ff,stroke:#1890ff,stroke-width:2px;
+    style MONITOR fill:#fffbe6,stroke:#faad14,stroke-width:2px;
+```
